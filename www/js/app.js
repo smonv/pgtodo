@@ -1,5 +1,6 @@
 $(document).on("deviceready", onDeviceReady);
 function onDeviceReady() {
+    var db = window.sqlitePlugin.openDatabase({ name: "todo.db" });
     $("#addForm").submit(function (e) {
         var mes;
         mes = $("#message").val();
@@ -7,7 +8,6 @@ function onDeviceReady() {
         $("#message").val("");
         e.preventDefault();
     });
-    console.log(navigator.notification);
     $(document).on('touchend', 'button#btn-delete', function () {
         var li = $(this).parent().parent();
         navigator.notification.confirm('Are you sure?', function (buttonIndex) {
