@@ -1,2 +1,5 @@
 plugins/**
-!plugins/fetch.json
+!plugins/*.json
+platforms
+out
+.idea
